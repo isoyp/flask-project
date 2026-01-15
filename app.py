@@ -1,19 +1,12 @@
-from flask import Flask, render_template
-
-app = Flask(__name__)
-
-@app.route("/")
-def  home():
-    print("kontol")
-    return "flask is running"
-
-
+from flask import Flask
 import os
 
+app = Flask(_name_)
 
-if __name__== "__main__" :
-    port = int(os.environ.get("port", 5000))
+@app.route("/")
+def index():
+    return "FLASK TEST OK"
+
+if _name_ == "_main_":
+    port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
-
-
-# triger redeploy
