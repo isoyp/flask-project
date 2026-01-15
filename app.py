@@ -5,11 +5,8 @@ app = Flask(__name__)
 @app.route("/")
 def  home():
     print("kontol")
-    return render_template("index.html")
+    return "flask is running"
 
-@app.route("/about")
-def about():
-    return render_template("about.html")
 
 import os
 
