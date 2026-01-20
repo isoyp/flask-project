@@ -1,12 +1,22 @@
-from flask import Flask
-import os
+from flask import Flask, render_template
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 @app.route("/")
-def index():
-    return "FLASK TEST OK v2"
+def  home():
+    print("kontol")
+    return render_template("index.html")
 
-if _name_ == "_main_":
-    port = int(os.environ.get("PORT", 5000))
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+import os
+
+
+if __name__== "__main__" :
+    port = int(os.environ.get("port", 5000))
     app.run(host="0.0.0.0", port=port)
+
+
+# triger redeploy
